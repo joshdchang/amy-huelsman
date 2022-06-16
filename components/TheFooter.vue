@@ -1,41 +1,32 @@
 <script setup>
   const directusUrl = useUrl()
-  // const settings = await useItem('settings')
+  const settings = await useSingleton('settings')
 </script>
 <template>
-  <div class="bg-white grid justify-items-center p-10 sm:p-12 md:p-14 lg:p-16">
-    <div class="max-w-6xl w-full grid">
+  <div
+    class="border-t-2 pb-4 pt-8 sm:pt-10 md:pt-11 lg:pt-12 xl:pt-14 mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 grid justify-items-center sans-serif">
+    <div class="w-full grid">
       <div
-        class="grid sm:grid-cols-2 text-center gap-12 md:gap-12 lg:gap-16 xl:gap-20">
-        <div class="sm:text-left grid gap-6">
-          <h3 class="font-serif font-bold text-2xl sm:text-3xl text-primary">
-            <!-- {{ settings.store_name }} -->
-          </h3>
-          <div class="text-gray-500 grid gap-2">
-            <!-- <p>
-              {{ settings.address }}
-            </p>
-            <p>
+        class="grid gap-5 sm:grid-cols-2 text-center sm:text-left">
+        <div class="md:text-left grid gap-2 sm:gap-3">
+          <h2 class="font-medium uppercase text-lg text-gray-800 lg:text-xl">
+            {{ settings.name }}
+          </h2>
+          <div class="text-gray-500 grid gap-1">
+            <a :href="'tel:+1' + phone_number.replace(/\D/g, '')">
               {{ settings.phone_number }}
-            </p>
+            </a>
             <p>
               {{ settings.email }}
-            </p> -->
+            </p>
           </div>
         </div>
-        <div class="sm:text-right grid gap-6">
+        <div class="sm:text-right grid">
           <span>
-            <!-- <a :href="settings.facebook_link" target="_blank">
-              <Button icon="pi pi-facebook" label="Like Us on Facebook" class="p-button-info p-button-lg p-button-outlined" />
-            </a> -->
-          </span>
-          <span>
-            <a :href="directusUrl" target="_blank">
-              <Button icon="pi pi-lock" label="Admin Login" class="p-button-sm p-button-outlined" />
-            </a>
+            <a :href="directusUrl" target="_blank" class="text-blue-600 hover:text-blue-400 transition-colors">Admin Login</a>
           </span>
           <small class="text-gray-500 self-end pt-4">
-            Copyright © {{ new Date().getFullYear() }} <!-- {{ settings.name }} -->
+            Copyright © {{ new Date().getFullYear() }} {{ settings.name }}
           </small>
         </div>
       </div>

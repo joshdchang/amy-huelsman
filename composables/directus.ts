@@ -6,7 +6,8 @@ const useCollection = (collection) => useDirectus().value.items(collection)
 const useQuery = async (collection, query) => (await useState('directusQuery-' + collection + '-' + JSON.stringify(query), () => useCollection(collection).readByQuery(query)).value).data
 const useItems = (collection, limit = 100, page = 1) => useQuery(collection, { limit, page })
 const useItem = (collection, id = 1) => useState('directusItem-' + collection + '-' + id, () => useCollection(collection).readOne(id)).value
+const useSingleton = (collection) => useState('directusSingleton-' + collection, () => useDirectus().value.singleton('settings').read()).value
 
-const useImage = () => uuid => useUrl() + '/assets/' + uuid
+const useImage = () => (uuid, key) => useUrl() + '/assets/' + uuid + (typeof key === 'string' ? ('?key=' + key) : '')
 
-export { useUrl, useDirectus, useCollection, useItems, useItem, useQuery, useImage }
+export { useUrl, useDirectus, useCollection, useSingleton, useItems, useItem, useQuery, useImage }

@@ -1,5 +1,10 @@
 <script setup>
 
+  onMounted(() => {
+    window.scrollTo(0, 0)
+  })
+
+
   const route = useRoute()
   const item = await useItem('items', route.params.id)
 

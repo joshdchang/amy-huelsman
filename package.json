@@ -9,7 +9,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
-    "nuxt": "3.0.0-rc.3",
+    "nuxt": "3.0.0-rc.4",
     "primevue": "^3.12.6",
     "sass": "^1.52.2",
     "sass-loader": "^13.0.0",

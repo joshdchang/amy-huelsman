@@ -1,6 +1,11 @@
 <script setup>
+
   import useVuelidate from '@vuelidate/core'
   import { required, email } from '@vuelidate/validators'
+
+  onMounted(() => {
+    window.scrollTo(0, 0)
+  })
 
   const state = reactive({
     name: '',
@@ -103,7 +108,9 @@
         </div>
       </div>
       <Prose>
-        <h4>Or give me a call at <PhoneLink :number="settings.phone_number" /></h4>
+        <h4>Or give me a call at
+          <PhoneLink :number="settings.phone_number" />
+        </h4>
       </Prose>
     </div>
   </div>

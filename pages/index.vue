@@ -1,8 +1,10 @@
 <script setup>
+  onMounted(() => {
+    window.scrollTo(0, 0)
+  })
 
   const settings = await useSingleton('settings')
   const items = await useItems('items')
-  const imageUrl = useImage()
   
 </script>
 

@@ -1,6 +1,10 @@
 <script setup>
   const settings = await useSingleton('settings')
   const about = await useSingleton('about')
+
+  onMounted(() => {
+    window.scrollTo(0, 0)
+  })
 </script>
 
 <template>

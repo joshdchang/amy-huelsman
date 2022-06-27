@@ -3,11 +3,11 @@
   const settings = await useSingleton('settings')
   const items = await useItems('items')
   const imageUrl = useImage()
+  
 </script>
 
 <template>
   <div>
-
     <Head>
       <Title>
         {{ settings.name }}
@@ -23,7 +23,7 @@
           <DirectusImage :uuid="item.thumbnail" transformKey="thumbnail" class="w-full shadow-[#00000010_0px_0px_6px_1px]" />
           <div class="absolute top-0 bottom-0 left-0 right-0 hover:bg-[#00000030] transition-colors"></div>
         </div>
-        <h2 class="text-gray-600 sm:text-lg md:text-base lg:text-xl xl:text-2xl hover:text-gray-400 transition-colors">
+        <h2 class="font-thin text-gray-600 sm:text-lg md:text-base lg:text-xl xl:text-2xl hover:text-gray-400 transition-colors">
           {{ item.title }}
         </h2>
       </NuxtLink>

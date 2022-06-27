@@ -1,6 +1,7 @@
 <script setup>
   const directusUrl = useUrl()
   const settings = await useSingleton('settings')
+
 </script>
 <template>
   <div
@@ -13,12 +14,8 @@
             {{ settings.name }}
           </h2>
           <div class="text-gray-500 grid gap-1">
-            <a :href="'tel:+1' + phone_number.replace(/\D/g, '')">
-              {{ settings.phone_number }}
-            </a>
-            <p>
-              {{ settings.email }}
-            </p>
+            <PhoneLink :number="settings.phone_number" class="hover:text-gray-400" />
+            <EmailLink :email="settings.email" class="hover:text-gray-400" />
           </div>
         </div>
         <div class="sm:text-right grid">

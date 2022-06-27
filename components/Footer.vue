@@ -18,11 +18,19 @@
             <EmailLink :email="settings.email" class="hover:text-gray-400" />
           </div>
         </div>
-        <div class="sm:text-right grid">
-          <span>
+        <div class="sm:text-right grid gap-4">
+          <div class="grid grid-flow-col gap-4 sm:justify-end justify-center">
+            <a v-if="settings.facebook" :href="settings.facebook" target="_blank">
+              <Button icon="pi pi-facebook" class="p-button-rounded p-button-lg p-button-info" />
+            </a>
+            <a v-if="settings.instagram" :href="settings.instagram" target="_blank">
+              <Button icon="pi pi-instagram" class="p-button-rounded p-button-lg p-button-help" />
+            </a>
+          </div>
+          <div class="pt-5">
             <a :href="directusUrl" target="_blank" class="text-blue-600 hover:text-blue-400 transition-colors">Admin Login</a>
-          </span>
-          <small class="text-gray-500 self-end pt-4">
+          </div>
+          <small class="text-gray-500 self-end">
             Copyright © {{ new Date().getFullYear() }} {{ settings.name }}
           </small>
         </div>

@@ -29,8 +29,9 @@
       <p class="text-gray-400 uppercase md:justify-self-end text-sm lg:text-base xl:text-lg">{{ settings.title }}</p>
     </NuxtLink>
     <nav class="hidden md:grid grid-flow-col gap-4 lg:gap-6 xl:gap-8 items-center">
-      <NuxtLink v-for="item of navItems" :to="item.path" class="text-gray-400 text-lg lg:text-xl xl:text-2xl hover:text-gray-800 transition-colors" activeClass="text-gray-900">{{
-        item.name }}
+      <NuxtLink v-for="item of navItems" :to="item.path"
+        class="text-gray-400 text-lg lg:text-xl xl:text-2xl hover:text-gray-800 transition-colors" activeClass="text-gray-900">
+        {{ item.name }}
       </NuxtLink>
     </nav>
     <div class="md:hidden grid items-center">
@@ -40,8 +41,11 @@
     </div>
     <Sidebar v-model:visible="navOpen" position="full">
       <div class="grid gap-6 justify-center text-center">
-        <NuxtLink v-for="item of navItems" :to="item.path" class="sans-serif font-semibold text-gray-400 text-2xl hover:text-gray-800 transition-colors" activeClass="text-gray-900"
-          @click="navOpen = false">{{ item.name }}</NuxtLink>
+        <NuxtLink v-for="item of navItems" :to="item.path"
+          class="sans-serif font-semibold text-gray-400 text-2xl hover:text-gray-800 transition-colors" activeClass="text-gray-900"
+          @click="navOpen = false">
+          {{ item.name }}
+        </NuxtLink>
       </div>
     </Sidebar>
   </div>

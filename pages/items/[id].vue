@@ -14,8 +14,8 @@
 </script>
 
 <template>
-  <div class="sans-serif pt-6 grid gap-6 sm:gap-8 xl:gap-10 justify-center">
-    <Prose>
+  <div class="sans-serif pt-6 grid gap-6 sm:gap-8 xl:gap-10 justify-items-center">
+    <Prose class="w-full max-w-4xl text-left">
       <h2 class="mt-1 sm:mt-2 md:mt-3 lg:mt-5 xl:mt-8">{{ item.title }}</h2>
     </Prose>
     <Prose v-html="item.content" class="w-full max-w-4xl prose-img:m-0 prose-img:sm:m-0 prose-img:md:m-0 prose-img:lg:m-0 prose-img:xl:m-0 prose-img:w-full" />

@@ -1,3 +1,5 @@
-# TODO
-- Fill in Directus content
-- Icons, titles, descriptions, alts?, and other SEO
+# Amy Huelsman Website
+
+This is a website I made for a client.
+
+See: https://www.amyhuelsman.com/.
